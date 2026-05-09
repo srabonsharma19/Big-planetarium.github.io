@@ -11,7 +11,7 @@ body {
   color: #333;
   font-size: 18px;
   line-height: 1.7;
-  background: url('image/sun.jpg') center/cover fixed no-repeat;
+  background: url('../image/sun.jpg') center/cover fixed no-repeat;
 }
 
 /* NAVBAR */

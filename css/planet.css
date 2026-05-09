@@ -8,7 +8,7 @@
 
 body {
   margin: 0;
-  background: url("image/sun.jpg") center/cover fixed;
+  background: url("../image/sun.jpg") center/cover fixed;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
