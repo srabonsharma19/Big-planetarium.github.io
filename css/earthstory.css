@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Crimson Text', serif;
+  color: #333;
+  font-size: 18px;
+  line-height: 1.7;
+  background: url('image/sun.jpg') center/cover fixed no-repeat;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(5,6,26,0.92);
+  padding: 1.2rem 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navbar a {
+  color: #d8cbe8;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+  letter-spacing: 0.5px;
+}
+
+.navbar a:hover { color: #fff; text-shadow: 0 0 8px #fff; }
+.navbar a.active { color: #c026d3; text-shadow: 0 0 10px #c026d3; }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 120px;
+}
+
+.hero-content {
+  background: rgba(255,255,255,0.75);
+  padding: 2.5rem 3rem;
+  border-radius: 12px;
+  max-width: 700px;
+}
+
+.hero-sub {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.3em;
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.hero-desc {
+  max-width: 520px;
+  margin: 0 auto 2rem;
+  color: #444;
+  font-style: italic;
+}
+
+.scroll-btn {
+  padding: 12px 28px;
+  border: 1px solid #000;
+  color: #000;
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  transition: 0.3s;
+}
+
+.scroll-btn:hover {
+  background: rgba(0,0,0,0.1);
+}
+
+/* CHAPTERS */
+.chapter {
+  padding: 70px 24px;
+}
+
+.chapter-body {
+  max-width: 720px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.75);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.chapter-body h2 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.6rem, 4vw, 2.3rem);
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.chapter-body h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  color: #777;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.chapter-body p {
+  margin-bottom: 1.2rem;
+  color: #444;
+}
+
+/* VIDEO BLOCKS */
+.video-slot {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.video-slot iframe {
+  width: 100%;
+  max-width: 720px;
+  height: 405px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.footer {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 50px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  margin-top: 60px;
+}
+
+.footer-inner {
+  max-width: 800px;
+  margin: auto;
+}
+
+.footer-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.15em;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.footer-sub {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+.footer-links a {
+  color: #d8cbe8;
+  margin: 0 12px;
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px #fff;
+}
+
+.footer-copy {
+  margin-top: 25px;
+  font-size: 0.75rem;
+  color: #aaa;
+  letter-spacing: 0.15em;
+}

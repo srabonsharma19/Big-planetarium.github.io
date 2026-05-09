@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Big planetarium</title>
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+
+  <!-- Video Background -->
+  <video class="video-bg" autoplay muted loop playsinline>
+    <source src="image/Earth.mp4" type="video/mp4">
+  </video>
+
+  <div class="overlay"></div>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">BIG PLANETARIUM</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="planet.html">Planets</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+    </ul>
+  </nav>
+
+  
+  <div class="ai-button" id="aiBtn">
+    <img src="image/AI.png" alt="AI Assistant">
+  </div>
+
+  
+  <div class="ai-panel" id="aiPanel">
+    <div class="ai-header">
+      <img src="image/AI.png" alt="AI Icon">
+      <span>Assistant </span>
+    </div>
+
+    <div class="ai-body">
+      <p>Hello, how can I help you today?</p>
+
+      <!-- Chat Input Area -->
+      <div class="ai-chatbox">
+        <input type="text" placeholder="Type your message..." />
+        <button class="send-btn">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>ORIGIN</h1>
+
+    <p class="desc">
+      Explore the beauty, resilience, and wonders of our planet through captivating visuals and stories.
+    </p>
+
+    <a href="earthstory.html" class="btn left-btn">Discover Earth's Story →</a>
+    <a href="login.html" class="btn secondary-btn">Login</a>
+  </section>
+
+    <script src="java script/ai.js"></script>
+
+</body>
+</html>

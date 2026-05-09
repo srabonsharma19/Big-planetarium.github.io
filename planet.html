@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planets</title>
+  <link rel="stylesheet" href="css/planet.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="planet.html">Planets</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <div class="carousel-container">
+    <div class="carousel" id="carousel">
+      <div class="card"><img src="image/mercury.png"><h2>Mercury</h2></div>
+      <div class="card"><img src="image/venus.png"><h2>Venus</h2></div>
+      <div class="card"><img src="image/earth.png"><h2>Earth</h2></div>
+      <div class="card"><img src="image/mars.png"><h2>Mars</h2></div>
+      <div class="card"><img src="image/jupiter.png"><h2>Jupiter</h2></div>
+      <div class="card"><img src="image/saturn.png"><h2>Saturn</h2></div>
+      <div class="card"><img src="image/uranus.png"><h2>Uranus</h2></div>
+      <div class="card"><img src="image/neptune.png"><h2>Neptune</h2></div>
+    </div>
+
+    <div class="carousel-controls">
+      <button class="arrow-btn" id="prevBtn">&#10094;</button>
+      <button class="arrow-btn" id="nextBtn">&#10095;</button>
+    </div>
+
+    <div class="planet-info">
+      <h3 id="planet-name"></h3>
+      <p id="planet-desc"></p>
+    </div>
+  </div>
+
+  <script>
+    const cards = [...document.querySelectorAll(".card")];
+    const info = [
+      { name: "Mercury", desc: `Mercury is the closest planet to the Sun, a tiny world blasted by heat and radiation. It has no atmosphere, which means temperatures swing from 430°C in the day to –180°C at night. Its surface looks like the Moon — covered in craters, cliffs, and ancient scars from billions of years of impacts
+                                Despite being small, Mercury moves incredibly fast, completing one orbit in just 88 days, which is why ancient astronomers named it after the messenger god.
+                                It's a world of extremes: blazing sunlight on one side, freezing darkness on the other. A planet where a single day lasts longer than its year. Mercury is a reminder of how violent and unforgiving the early Solar System truly was.`},
+      { name: "Venus",   desc: `Venus is almost the same size as Earth, but that’s where the similarity ends. Wrapped in thick yellow clouds of sulfuric acid, Venus is the hottest planet in the Solar System, reaching 475°C — hot enough to melt lead.
+                                Its atmosphere is a crushing blanket of carbon dioxide, creating a runaway greenhouse effect. The pressure on the surface is the same as being 900 meters underwater.
+                                Volcanoes, lava plains, and endless storms make Venus a world of chaos. Even sunlight can’t reach the ground — it’s trapped in a toxic haze.
+                                Venus shows what happens when a planet loses control of its climate, turning into a glowing, deadly furnace.`},
+      { name: "Earth",   desc: `Earth is the only known planet with life, a world of oceans, forests, mountains, and atmosphere perfectly balanced for survival.
+                                It sits in the habitable zone, where temperatures allow liquid water — the key ingredient for life.
+                                Earth’s magnetic field protects us from solar radiation, while the atmosphere keeps temperatures stable.
+                                From the deep oceans to the polar ice caps, Earth is a masterpiece of nature.
+                                It’s not just a planet — it’s our home, the rarest jewel in the Solar System.`},
+      { name: "Mars",    desc: `Mars is a cold desert world covered in iron-rich dust that gives it its famous red color.
+                                It has the largest volcano in the Solar System, Olympus Mons, and a canyon so huge it could stretch across the entire United States.
+                                Scientists believe Mars once had rivers, lakes, and maybe even oceans, making it a strong candidate for ancient life.
+                                Today, it’s a frozen world with thin air, dust storms, and temperatures that drop to –120°C at night.
+                                Mars is humanity’s next big dream — the planet we hope to visit and maybe even live on someday.` },
+      { name: "Jupiter", desc: `Jupiter is a massive gas giant, so huge that 1,300 Earths could fit inside it.
+                                Its atmosphere is a swirling mix of storms, lightning, and colorful clouds. The most famous is the Great Red Spot, a storm larger than Earth that has been raging for over 300 years.
+                                Jupiter has a powerful magnetic field and more than 95 moons, including Europa, which may hide a global ocean beneath its icy surface.
+                                It’s not just a planet — it’s a miniature solar system of its own.` },
+      { name: "Saturn",  desc: `Saturn is the most visually stunning planet, famous for its massive rings made of ice, dust, and rock.
+                                Although it looks huge, Saturn is mostly gas — so light it could float in water if you had a giant enough ocean.
+                                Its rings stretch hundreds of thousands of kilometers, forming the most beautiful structure in the Solar System.
+                                Saturn also has over 140 moons, including Titan, a world with lakes of liquid methane and a thick orange atmosphere.
+                                Saturn is a symbol of cosmic beauty — elegant, mysterious, and unforgettable.` },
+      { name: "Uranus",  desc: `Uranus is unlike any other planet. It rotates on its side, tilted by 98°, making its seasons last 21 years each.
+                                Its pale blue color comes from methane gas, which absorbs red light and reflects blue.
+                                Uranus is an ice giant, filled with frozen water, ammonia, and methane deep inside.
+                                It has faint rings, freezing temperatures of –224°C, and winds that blow at 900 km/h.
+                                Uranus is strange, quiet, and mysterious — a planet that defies the rules.` },
+      { name: "Neptune", desc: `Neptune is the farthest planet from the Sun, a deep blue world of storms and violent weather.
+                                It has the fastest winds in the Solar System, reaching 2,100 km/h, strong enough to shatter steel.
+                                Its dark storms appear and disappear like cosmic hurricanes, swirling across its icy atmosphere.
+                                Neptune’s deep blue color comes from methane and unknown chemicals that scientists still can’t fully explain.
+                                Cold, distant, and powerful — Neptune is the wild frontier of our Solar System.` },
+    ];
+
+    let current = 2;
+
+    function update() {
+      cards.forEach((card, i) => {
+        card.classList.remove("left", "center", "right", "hidden");
+        if      (i === current - 1) card.classList.add("left");
+        else if (i === current)     card.classList.add("center");
+        else if (i === current + 1) card.classList.add("right");
+        else                        card.classList.add("hidden");
+      });
+
+      const box = document.querySelector(".planet-info");
+      box.style.opacity = 0;
+      setTimeout(() => {
+        document.getElementById("planet-name").textContent = info[current].name;
+        document.getElementById("planet-desc").textContent = info[current].desc;
+        box.style.opacity = 1;
+      }, 200);
+    }
+
+    cards.forEach((card, i) => card.addEventListener("click", () => {
+      if (i === current - 1) current--;
+      else if (i === current + 1) current++;
+      update();
+    }));
+
+    document.getElementById("prevBtn").addEventListener("click", () => {
+      current = (current - 1 + cards.length) % cards.length;
+      update();
+    });
+
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      current = (current + 1) % cards.length;
+      update();
+    });
+
+    update();
+  </script>
+
+</body>
+</html>

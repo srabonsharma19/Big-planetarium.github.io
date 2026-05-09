@@ -1,0 +1,158 @@
+
+body {
+  margin: 0;
+  background-image: url("image/sun.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  color: #f5f5f5;
+}
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(5, 6, 26, 0.92);
+  padding: 1.2rem 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  color: #d8cbe8;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.navbar a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px #ffffff;
+}
+
+.navbar a.active {
+  color: #c026d3;
+  text-shadow: 0 0 10px #c026d3;
+}
+
+
+.contact {
+  margin-top: 160px;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.contact-container {
+  max-width: 900px;
+  width: 100%;
+  background: rgba(10, 10, 25, 0.6);
+  padding: 50px;
+  border-radius: 25px;
+  text-align: center;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 1.2s ease;
+}
+
+.contact-container h1 {
+  font-size: 3rem;
+  margin-bottom: 25px;
+  color: #e8d9ff;
+  text-shadow: 0 0 12px rgba(192, 38, 211, 0.6);
+}
+
+.contact-container p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 18px;
+  color: #e7e7e7;
+}
+
+.info-box {
+  margin: 30px 0;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-box h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #d9c7ff;
+  text-shadow: 0 0 8px rgba(192, 38, 211, 0.5);
+}
+
+.info-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-box ul li {
+  font-size: 1.1rem;
+  margin: 8px 0;
+  color: #eaeaea;
+}
+
+.footer-text {
+  margin-top: 20px;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 30px;
+  }
+
+  .contact-container h1 {
+    font-size: 2.3rem;
+  }
+
+  .info-box h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    margin-top: 130px;
+  }
+
+  .contact-container {
+    padding: 22px;
+  }
+
+  .contact-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .info-box h2 {
+    font-size: 1.3rem;
+  }
+}
